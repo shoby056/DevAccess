@@ -58,4 +58,10 @@ app.use("/api/audit-logs", auditLogRoutes);
 app.use("/api/profile", profileRoutes);
 app.use("/api/notifications", notificationRoutes);
 app.use("/api/ai-assistant", aiAssistantRoutes);
+app.get("/", (req, res) => {
+  res.status(200).json({
+    success: true,
+    message: "DevAccess API is running",
+  });
+});
 module.exports = app;
