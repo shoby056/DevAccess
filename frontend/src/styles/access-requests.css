@@ -1,0 +1,763 @@
+
+/* =========================================================
+   ACCESS REQUESTS — RESPONSIVE, USERS-PAGE STYLE
+   ========================================================= */
+
+.access-requests-page {
+  width: 100%;
+  min-width: 0;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.access-requests-page *,
+.access-requests-page *::before,
+.access-requests-page *::after {
+  box-sizing: border-box;
+}
+
+/* HEADER */
+
+.access-requests-page .dashboard-header {
+  width: 100%;
+  min-width: 0;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.access-requests-page .dashboard-header > div {
+  min-width: 0;
+}
+
+.access-requests-page .eyebrow {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--primary);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.access-requests-page .dashboard-header h1 {
+  margin: 0;
+  color: var(--text);
+  font-size: 28px;
+  line-height: 1.2;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.access-requests-page .dashboard-subtitle {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.access-requests-page .dashboard-header .primary-button {
+  flex-shrink: 0;
+  min-height: 38px;
+}
+
+/* ALERT */
+
+.access-requests-page .alert {
+  width: 100%;
+  margin-bottom: 16px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.access-requests-page .alert-error {
+  color: var(--danger);
+  background: var(--danger-bg);
+  border: 1px solid #fecaca;
+}
+
+/* CARD */
+
+.access-requests-page .access-requests-card {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+/* FILTERS */
+
+.access-requests-page .filters-row {
+  width: 100%;
+  min-width: 0;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.access-requests-page .filters-row select {
+  width: 160px;
+  max-width: 100%;
+  height: 38px;
+  padding: 0 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text);
+  font-size: 12px;
+  outline: none;
+}
+
+.access-requests-page .filters-row select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-light);
+}
+
+/* TABLE SCROLLER
+   Horizontal scrolling happens inside the card, not the page. */
+
+.access-requests-page .data-table {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-gutter: stable;
+}
+
+/* TABLE */
+
+.access-requests-page .data-table table {
+  width: 100%;
+  min-width: 1120px;
+  border-collapse: collapse;
+  border-spacing: 0;
+  table-layout: fixed;
+}
+
+/* Stable column widths.
+   The final column is targeted directly so JSX does not need
+   special actions-column classes. */
+
+.access-requests-page .data-table th:nth-child(1),
+.access-requests-page .data-table td:nth-child(1) {
+  width: 155px;
+}
+
+.access-requests-page .data-table th:nth-child(2),
+.access-requests-page .data-table td:nth-child(2) {
+  width: 155px;
+}
+
+.access-requests-page .data-table th:nth-child(3),
+.access-requests-page .data-table td:nth-child(3) {
+  width: 85px;
+}
+
+.access-requests-page .data-table th:nth-child(4),
+.access-requests-page .data-table td:nth-child(4) {
+  width: 220px;
+}
+
+.access-requests-page .data-table th:nth-child(5),
+.access-requests-page .data-table td:nth-child(5) {
+  width: 110px;
+}
+
+.access-requests-page .data-table th:nth-child(6),
+.access-requests-page .data-table td:nth-child(6) {
+  width: 115px;
+}
+
+.access-requests-page .data-table th:nth-child(7),
+.access-requests-page .data-table td:nth-child(7) {
+  width: 180px;
+}
+
+/* TABLE HEADER */
+
+.access-requests-page .data-table thead th {
+  height: 42px;
+  padding: 0 12px;
+  background: var(--surface-soft);
+  border-bottom: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-align: left;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.access-requests-page .data-table thead th:last-child {
+  text-align: center;
+}
+
+/* TABLE BODY */
+
+.access-requests-page .data-table tbody td {
+  min-width: 0;
+  padding: 12px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border-light);
+  color: var(--text-soft);
+  font-size: 11px;
+  line-height: 1.4;
+  vertical-align: middle;
+  overflow-wrap: anywhere;
+}
+
+.access-requests-page .data-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.access-requests-page .data-table tbody tr:hover td {
+  background: var(--surface-soft);
+}
+
+/* TABLE TEXT */
+
+.access-requests-page .table-primary {
+  width: 100%;
+  min-width: 0;
+  color: var(--text);
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.access-requests-page .table-secondary {
+  width: 100%;
+  min-width: 0;
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.access-requests-page .request-reason {
+  width: 100%;
+  min-width: 0;
+  color: var(--text-soft);
+  font-size: 11px;
+  line-height: 1.5;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.access-requests-page .date-text {
+  white-space: nowrap;
+  font-size: 11px;
+}
+
+/* ACCESS BADGES */
+
+.access-requests-page .access-level-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 48px;
+  min-height: 24px;
+  padding: 0 8px;
+  border-radius: 999px;
+  font-size: 9px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.access-requests-page .access-level-read {
+  color: var(--info);
+  background: var(--info-bg);
+}
+
+.access-requests-page .access-level-write {
+  color: var(--warning);
+  background: var(--warning-bg);
+}
+
+.access-requests-page .access-level-admin {
+  color: var(--danger);
+  background: var(--danger-bg);
+}
+
+/* STATUS BADGES */
+
+.access-requests-page .status-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 24px;
+  padding: 0 8px;
+  border-radius: 999px;
+  font-size: 9px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.access-requests-page .request-status-pending {
+  color: var(--warning);
+  background: var(--warning-bg);
+}
+
+.access-requests-page .request-status-approved {
+  color: var(--success);
+  background: var(--success-bg);
+}
+
+.access-requests-page .request-status-rejected {
+  color: var(--danger);
+  background: var(--danger-bg);
+}
+
+.access-requests-page .request-status-cancelled {
+  color: var(--muted);
+  background: var(--surface-soft);
+}
+
+/* ACTIONS CELL
+   Works with the existing JSX last-column Actions cell. */
+
+.access-requests-page .data-table th:last-child,
+.access-requests-page .data-table td:last-child,
+.access-requests-page .actions-cell {
+  width: 180px;
+  min-width: 180px;
+}
+
+.access-requests-page .actions-cell {
+  padding: 10px 12px !important;
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* Supports either .table-actions or .actions-container. */
+
+.access-requests-page .table-actions,
+.access-requests-page .actions-container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  margin: 0 auto;
+  white-space: normal;
+}
+
+.access-requests-page .actions-container {
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+/* PermissionGate may wrap individual buttons; allow those
+   wrappers to occupy the full row as well. */
+
+.access-requests-page .table-actions > *,
+.access-requests-page .actions-container > * {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.access-requests-page .table-actions .action-button,
+.access-requests-page .actions-container .action-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  min-height: 32px;
+  height: auto;
+  padding: 7px 8px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface);
+  color: var(--text-soft);
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1.3;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  cursor: pointer;
+  transition: background var(--transition),
+    border-color var(--transition), color var(--transition);
+}
+
+.access-requests-page .table-actions .action-button:hover,
+.access-requests-page .actions-container .action-button:hover {
+  background: var(--surface-hover);
+  border-color: #cbd5e1;
+  color: var(--text);
+}
+
+.access-requests-page .table-actions .action-button.danger,
+.access-requests-page .actions-container .action-button.danger {
+  color: var(--danger);
+  background: var(--danger-bg);
+  border-color: #fecaca;
+}
+
+.access-requests-page .table-actions .action-button.danger:hover,
+.access-requests-page .actions-container .action-button.danger:hover {
+  color: #b91c1c;
+  background: #fee2e2;
+  border-color: #fca5a5;
+}
+
+.access-requests-page .table-actions .no-action,
+.access-requests-page .actions-container .no-action {
+  display: block;
+  padding: 7px 2px;
+  color: var(--muted-light);
+  font-size: 9px;
+  text-align: center;
+  white-space: normal;
+}
+
+/* PAGINATION */
+
+.access-requests-page .pagination {
+  width: 100%;
+  min-width: 0;
+  min-height: 58px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+}
+
+.access-requests-page .pagination-info {
+  min-width: 0;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.5;
+  white-space: normal;
+}
+
+.access-requests-page .pagination-buttons {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-shrink: 0;
+}
+
+.access-requests-page .pagination-buttons button {
+  min-width: 32px;
+  min-height: 32px;
+  padding: 0 10px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: var(--surface);
+  color: var(--text-soft);
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.access-requests-page .pagination-buttons button:hover:not(:disabled) {
+  background: var(--surface-hover);
+  border-color: #cbd5e1;
+}
+
+.access-requests-page .pagination-buttons button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.access-requests-page .pagination-buttons button.active {
+  color: #fff;
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+/* MODAL */
+
+.access-requests-page .access-request-modal {
+  width: min(520px, calc(100vw - 32px));
+  max-width: 100%;
+  max-height: calc(100dvh - 40px);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.access-requests-page .access-request-modal .modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.access-requests-page .access-request-modal .modal-header > div {
+  min-width: 0;
+}
+
+.access-requests-page .access-request-modal .modal-header h2 {
+  margin: 0;
+  color: var(--text);
+  font-size: 17px;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.access-requests-page .access-request-modal .modal-header p {
+  margin: 5px 0 0;
+  color: var(--muted);
+  font-size: 11px;
+  overflow-wrap: anywhere;
+}
+
+.access-requests-page .access-request-modal .modal-close {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 20px;
+}
+
+.access-requests-page .access-request-modal .modal-close:hover {
+  color: var(--danger);
+  background: var(--danger-bg);
+  border-color: #fecaca;
+}
+
+.access-requests-page .access-request-modal form {
+  min-width: 0;
+  padding: 20px;
+}
+
+.access-requests-page .access-request-modal .form-group {
+  min-width: 0;
+  margin-bottom: 16px;
+}
+
+.access-requests-page .access-request-modal .form-group label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--text-soft);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.access-requests-page .access-request-modal select,
+.access-requests-page .access-request-modal textarea {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text);
+  font-size: 12px;
+  outline: none;
+}
+
+.access-requests-page .access-request-modal select {
+  height: 38px;
+  padding: 0 10px;
+}
+
+.access-requests-page .access-request-modal textarea {
+  min-height: 100px;
+  padding: 10px;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+.access-requests-page .access-request-modal select:focus,
+.access-requests-page .access-request-modal textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-light);
+}
+
+.access-requests-page .access-request-modal .modal-footer {
+  margin-top: 20px;
+  padding-top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 8px;
+  border-top: 1px solid var(--border);
+}
+
+.access-requests-page .access-request-modal .modal-footer button {
+  min-height: 36px;
+  max-width: 100%;
+}
+
+/* LOADING */
+
+.access-requests-page .loading-state {
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: var(--muted);
+}
+
+.access-requests-page .loading-state p {
+  margin: 0;
+  font-size: 12px;
+}
+
+.access-requests-page .loading-spinner {
+  width: 28px;
+  height: 28px;
+  border: 3px solid var(--border);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: accessRequestsSpin 0.8s linear infinite;
+}
+
+@keyframes accessRequestsSpin {
+  to { transform: rotate(360deg); }
+}
+
+/* EMPTY */
+
+.access-requests-page .empty-state {
+  min-height: 220px;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.access-requests-page .empty-state h3 {
+  margin: 0 0 6px;
+  color: var(--text);
+  font-size: 14px;
+}
+
+.access-requests-page .empty-state p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1100px) {
+  .access-requests-page {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 700px) {
+  .access-requests-page {
+    padding: 16px;
+  }
+
+  .access-requests-page .dashboard-header {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .access-requests-page .dashboard-header .primary-button {
+    width: 100%;
+  }
+
+  .access-requests-page .dashboard-header h1 {
+    font-size: 24px;
+  }
+
+  .access-requests-page .filters-row {
+    padding: 12px;
+  }
+
+  .access-requests-page .filters-row select {
+    width: 100%;
+  }
+
+  .access-requests-page .pagination {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .access-requests-page .pagination-buttons {
+    width: 100%;
+  }
+
+  .access-requests-page .pagination-buttons button {
+    flex: 1;
+  }
+
+  .access-requests-page .access-request-modal {
+    width: calc(100vw - 24px);
+    max-height: calc(100dvh - 24px);
+  }
+
+  .access-requests-page .access-request-modal form {
+    padding: 16px;
+  }
+
+  .access-requests-page .access-request-modal .modal-header {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 420px) {
+  .access-requests-page {
+    padding: 12px;
+  }
+
+  .access-requests-page .dashboard-header h1 {
+    font-size: 22px;
+  }
+
+  .access-requests-page .dashboard-subtitle {
+    font-size: 12px;
+  }
+
+  .access-requests-page .access-request-modal .modal-footer {
+    align-items: stretch;
+    flex-direction: column-reverse;
+  }
+
+  .access-requests-page .access-request-modal .modal-footer button {
+    width: 100%;
+  }
+}

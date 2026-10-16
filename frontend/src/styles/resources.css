@@ -1,0 +1,884 @@
+/* =========================================================
+   RESOURCES PAGE
+   SAME VISUAL STYLE AS USERS PAGE
+========================================================= */
+
+.resources-page {
+  width: 100%;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.resources-page .page-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.resources-page .page-eyebrow {
+  margin-bottom: 6px;
+  color: var(--primary);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.resources-page .page-header h1 {
+  margin: 0;
+  color: var(--text);
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.resources-page .page-header p:not(.page-eyebrow) {
+  margin: 7px 0 0;
+  color: var(--text-soft);
+  font-size: 13px;
+}
+
+/* =========================================================
+   ADD RESOURCE BUTTON
+========================================================= */
+
+.resources-page .add-user-button {
+  min-height: 40px;
+  padding: 0 15px;
+  border: 1px solid var(--primary);
+  border-radius: 8px;
+  background: var(--primary);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.resources-page .add-user-button:hover {
+  background: var(--primary-dark);
+}
+
+/* =========================================================
+   ALERTS
+========================================================= */
+
+.resources-page .alert {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 11px;
+}
+
+.resources-page .alert-success {
+  border-color: #bbf7d0;
+  background: #f0fdf4;
+  color: #166534;
+}
+
+.resources-page .alert-error {
+  border-color: #fecaca;
+  background: #fef2f2;
+  color: #b91c1c;
+}
+
+.resources-page .alert-close {
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font-size: 16px;
+}
+
+/* =========================================================
+   TOOLBAR
+========================================================= */
+
+.resources-page .users-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.resources-page .search-form {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-width: 160px;
+  gap: 8px;
+}
+
+.resources-page .search-input-wrapper {
+  position: relative;
+  flex: 1;
+  max-width: 360px;
+}
+
+.resources-page .search-input-wrapper input {
+  width: 100%;
+  height: 38px;
+  padding: 0 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--text);
+  font-size: 12px;
+  outline: none;
+}
+
+.resources-page .users-toolbar select {
+  height: 38px;
+  min-width: 115px;
+  padding: 0 28px 0 11px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--text);
+  font-size: 12px;
+  outline: none;
+}
+
+.resources-page .search-input-wrapper input:focus,
+.resources-page .users-toolbar select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.08);
+}
+
+.resources-page .clear-filter-button {
+  min-height: 38px;
+  padding: 0 13px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--text-soft);
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* =========================================================
+   TABLE CARD
+========================================================= */
+
+.resources-page .table-card {
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+}
+
+.resources-page .table-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 62px;
+  padding: 0 18px;
+  border-bottom: 1px solid var(--border);
+}
+
+.resources-page .table-card-header h2 {
+  margin: 0;
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.resources-page .table-card-header p {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.resources-page .table-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 30px;
+  height: 30px;
+  padding: 0 8px;
+  border-radius: 7px;
+  background: #eff6ff;
+  color: var(--primary);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+/* =========================================================
+   TABLE WRAPPER
+   DESKTOP = NO HORIZONTAL SCROLL
+========================================================= */
+
+.resources-page .table-wrapper {
+  width: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* =========================================================
+   DATA TABLE
+========================================================= */
+
+.resources-page .data-table {
+  width: 100%;
+  min-width: 0;
+  table-layout: fixed;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* =========================================================
+   TABLE HEADER
+========================================================= */
+
+.resources-page .data-table thead th {
+  padding: 11px 10px;
+  border-bottom: 1px solid var(--border);
+  background: #f8fafc;
+  color: var(--text-soft);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-align: left;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.resources-page .data-table thead th:not(.actions-column) {
+  cursor: pointer;
+}
+
+/* =========================================================
+   TABLE COLUMN WIDTHS
+========================================================= */
+
+.resources-page .data-table th:nth-child(1) {
+  width: 20%;
+}
+
+.resources-page .data-table th:nth-child(2) {
+  width: 10%;
+}
+
+.resources-page .data-table th:nth-child(3) {
+  width: 15%;
+}
+
+.resources-page .data-table th:nth-child(4) {
+  width: 12%;
+}
+
+.resources-page .data-table th:nth-child(5) {
+  width: 11%;
+}
+
+.resources-page .data-table th:nth-child(6) {
+  width: 9%;
+}
+
+.resources-page .data-table th:nth-child(7) {
+  width: 23%;
+}
+
+/* =========================================================
+   TABLE BODY
+========================================================= */
+
+.resources-page .data-table tbody td {
+  padding: 12px 10px;
+  border-bottom: 1px solid #f1f5f9;
+  color: var(--text);
+  font-size: 11px;
+  vertical-align: middle;
+}
+
+.resources-page .data-table tbody tr:hover {
+  background: #f8fafc;
+}
+
+.resources-page .data-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* =========================================================
+   RESOURCE CELL
+========================================================= */
+
+.resources-page .user-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.resources-page .user-avatar {
+  width: 32px;
+  height: 32px;
+  flex: 0 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #eff6ff;
+  color: var(--primary);
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.resources-page .user-info {
+  min-width: 0;
+  width: 100%;
+}
+
+.resources-page .user-info strong {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  color: var(--text);
+  font-size: 11px;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.resources-page .resource-description {
+  display: block;
+  width: 100%;
+  margin-top: 3px;
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 9px;
+  line-height: 1.4;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* =========================================================
+   TYPE BADGE
+========================================================= */
+
+.resources-page .resource-type-badge {
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+  overflow: hidden;
+  padding: 4px 7px;
+  border-radius: 5px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* =========================================================
+   PROJECT
+========================================================= */
+
+.resources-page .table-project {
+  min-width: 0;
+  width: 100%;
+}
+
+.resources-page .table-project strong {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  color: var(--text);
+  font-size: 10px;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.resources-page .table-project span {
+  display: block;
+  width: 100%;
+  margin-top: 3px;
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 8px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* =========================================================
+   RESOURCE BADGES
+========================================================= */
+
+.resources-page .resource-badge {
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+  padding: 4px 6px;
+  border-radius: 5px;
+  font-size: 8px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+/* Environment */
+
+.resources-page .environment-development {
+  background: #f0fdf4;
+  color: #166534;
+}
+
+.resources-page .environment-staging {
+  background: #fffbeb;
+  color: #92400e;
+}
+
+.resources-page .environment-production {
+  background: #fef2f2;
+  color: #991b1b;
+}
+
+/* Sensitivity */
+
+.resources-page .sensitivity-low {
+  background: #f0fdf4;
+  color: #166534;
+}
+
+.resources-page .sensitivity-medium {
+  background: #fffbeb;
+  color: #92400e;
+}
+
+.resources-page .sensitivity-high {
+  background: #fff7ed;
+  color: #9a3412;
+}
+
+.resources-page .sensitivity-critical {
+  background: #fef2f2;
+  color: #991b1b;
+}
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.resources-page .status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 6px;
+  border-radius: 5px;
+  font-size: 8px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.resources-page .status-dot {
+  width: 5px;
+  height: 5px;
+  flex: 0 0 5px;
+  border-radius: 50%;
+}
+
+.resources-page .status-active {
+  background: #f0fdf4;
+  color: #15803d;
+}
+
+.resources-page .status-active .status-dot {
+  background: #22c55e;
+}
+
+.resources-page .status-inactive {
+  background: #f8fafc;
+  color: #64748b;
+}
+
+.resources-page .status-inactive .status-dot {
+  background: #94a3b8;
+}
+
+/* =========================================================
+   ACTIONS
+   FIXED SPACE - NO CUTTING
+========================================================= */
+
+.resources-page .actions-column {
+  width: 23% !important;
+  min-width: 0 !important;
+  white-space: nowrap;
+  padding-left: 8px !important;
+  padding-right: 8px !important;
+}
+
+.resources-page .action-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 5px;
+  width: 100%;
+  min-width: 0;
+  white-space: nowrap;
+}
+
+.resources-page .table-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 0;
+  min-width: 0;
+  width: auto;
+  height: 31px;
+  padding: 0 5px;
+  border: 1px solid #e2e8f0;
+  border-radius: 7px;
+  background: #fff;
+  color: #475569;
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.resources-page .table-action:hover {
+  border-color: #bfdbfe;
+  background: #eff6ff;
+  color: #2563eb;
+  transform: translateY(-1px);
+}
+
+.resources-page .table-action.danger {
+  border-color: #fecaca;
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.resources-page .table-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 220px;
+  color: var(--text-soft);
+  font-size: 12px;
+}
+
+.resources-page .loading-spinner {
+  width: 22px;
+  height: 22px;
+  border: 2px solid #dbeafe;
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: resourcesSpin 0.8s linear infinite;
+}
+
+@keyframes resourcesSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.resources-page .empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 260px;
+  padding: 30px;
+  text-align: center;
+}
+
+.resources-page .empty-state h3 {
+  margin-bottom: 6px;
+  color: var(--text);
+  font-size: 15px;
+}
+
+.resources-page .empty-state p {
+  margin-bottom: 16px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+/* =========================================================
+   PAGINATION
+========================================================= */
+
+.resources-page .pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 14px 18px;
+  border-top: 1px solid var(--border);
+}
+
+.resources-page .pagination > button,
+.resources-page .pagination-pages button {
+  min-width: 32px;
+  height: 32px;
+  padding: 0 8px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: #fff;
+  color: var(--text-soft);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.resources-page .pagination > button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.resources-page .pagination-pages {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.resources-page .pagination-pages button.active {
+  border-color: var(--primary);
+  background: var(--primary);
+  color: #fff;
+}
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.resources-page .modal-overlay {
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(15, 23, 42, 0.5);
+}
+
+.resources-page .resource-modal {
+  width: 100%;
+  max-width: 520px;
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.2);
+}
+
+.resources-page .modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.resources-page .modal-header h2 {
+  color: var(--text);
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.resources-page .modal-header p {
+  margin: 5px 0 0;
+  color: var(--text-soft);
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.resources-page .modal-close {
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: #fff;
+  color: var(--text-soft);
+  font-size: 16px;
+}
+
+.resources-page .modal-form {
+  padding: 20px;
+}
+
+.resources-page .form-group {
+  margin-bottom: 15px;
+}
+
+.resources-page .form-group label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--text);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.resources-page .form-group input,
+.resources-page .form-group select,
+.resources-page .form-group textarea {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: #fff;
+  color: var(--text);
+  font-size: 11px;
+  outline: none;
+}
+
+.resources-page .form-group input,
+.resources-page .form-group select {
+  height: 38px;
+  padding: 0 11px;
+}
+
+.resources-page .form-group textarea {
+  min-height: 100px;
+  padding: 10px 11px;
+  resize: vertical;
+}
+
+.resources-page .form-group input:focus,
+.resources-page .form-group select:focus,
+.resources-page .form-group textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.08);
+}
+
+.resources-page .modal-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  padding-top: 6px;
+}
+
+.resources-page .modal-actions .primary-button,
+.resources-page .modal-actions .secondary-button {
+  min-height: 38px;
+  padding: 0 15px;
+  border-radius: 7px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* =========================================================
+   RESPONSIVE - 1100px
+========================================================= */
+
+@media (max-width: 1100px) {
+  .resources-page .users-toolbar {
+    flex-wrap: wrap;
+  }
+
+  .resources-page .search-form {
+    width: 100%;
+    flex: 1 1 100%;
+  }
+
+  .resources-page .search-input-wrapper {
+    max-width: 100%;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE - 700px
+========================================================= */
+
+@media (max-width: 700px) {
+  .resources-page {
+    padding: 18px;
+  }
+
+  .resources-page .page-header {
+    flex-direction: column;
+  }
+
+  .resources-page .add-user-button {
+    width: 100%;
+  }
+
+  .resources-page .users-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .resources-page .search-form {
+    width: 100%;
+  }
+
+  .resources-page .users-toolbar select,
+  .resources-page .clear-filter-button {
+    width: 100%;
+  }
+
+  /*
+     Mobile can scroll because seven columns
+     cannot fit comfortably on a small screen.
+  */
+
+  .resources-page .table-wrapper {
+    overflow-x: auto;
+  }
+
+  .resources-page .data-table {
+    min-width: 900px;
+    table-layout: auto;
+  }
+
+  .resources-page .pagination {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .resources-page .pagination > button {
+    width: 100%;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE - 420px
+========================================================= */
+
+@media (max-width: 420px) {
+  .resources-page {
+    padding: 14px;
+  }
+
+  .resources-page .page-header h1 {
+    font-size: 24px;
+  }
+
+  .resources-page .resource-modal {
+    max-height: calc(100vh - 16px);
+  }
+
+  .resources-page .modal-overlay {
+    padding: 8px;
+  }
+
+  .resources-page .modal-header,
+  .resources-page .modal-form {
+    padding: 16px;
+  }
+}

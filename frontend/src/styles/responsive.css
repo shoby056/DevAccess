@@ -1,0 +1,362 @@
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .status-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .teams-filters-form {
+    grid-template-columns: 1fr 180px auto;
+  }
+
+  .users-page .users-toolbar {
+    flex-wrap: wrap;
+  }
+
+  .users-page .search-form {
+    width: 100%;
+    flex-basis: 100%;
+  }
+
+  .users-page .users-toolbar > select {
+    flex: 1;
+  }
+}
+
+@media (max-width: 900px) {
+  .teams-filters-form {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .search-field {
+    grid-column: 1 / -1;
+  }
+
+  .filter-actions {
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 800px) {
+  .sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.25s ease;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .sidebar-overlay {
+    display: none;
+  }
+
+  .sidebar-overlay.show {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 999;
+  }
+
+  .main-wrapper {
+    margin-left: 0;
+  }
+
+  .mobile-menu {
+    display: block;
+    width: 36px;
+    height: 36px;
+    margin-right: 12px;
+    border: 1px solid var(--border);
+    background: #ffffff;
+    border-radius: 8px;
+    color: var(--text);
+  }
+
+  .mobile-menu:hover {
+    background: var(--surface-soft);
+  }
+
+  .topbar {
+    padding: 0 18px;
+  }
+
+  .topbar-user-info,
+  .logout-button {
+    display: none;
+  }
+
+  .main-content {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-header {
+    flex-direction: column;
+  }
+
+  .create-team-button {
+    width: 100%;
+  }
+
+  .teams-filters-form {
+    grid-template-columns: 1fr;
+  }
+
+  .search-field {
+    grid-column: auto;
+  }
+
+  .filter-actions {
+    width: 100%;
+  }
+
+  .filter-actions button {
+    flex: 1;
+  }
+
+  .pagination {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 700px) {
+  .users-page .page-header {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .users-page .page-header h1 {
+    font-size: 27px;
+  }
+
+  .users-page .add-user-button {
+    width: 100%;
+  }
+
+  .users-page .users-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .users-page .search-form {
+    flex-direction: column;
+    align-items: stretch;
+    min-width: 0;
+  }
+
+  .users-page .search-form .secondary-button {
+    width: 100%;
+  }
+
+  .users-page .users-toolbar > select {
+    width: 100%;
+    flex: none;
+  }
+
+  .users-page .clear-filter-button {
+    align-self: flex-start;
+  }
+
+  .users-page .table-card-header {
+    padding: 17px;
+  }
+
+  .users-page .data-table th,
+  .users-page .data-table td {
+    padding: 13px 15px;
+  }
+
+  .users-page .pagination {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .users-page .modal-overlay {
+    padding: 12px;
+  }
+
+  .users-page .modal-header,
+  .users-page .modal-form {
+    padding-left: 17px;
+    padding-right: 17px;
+  }
+
+  .users-page .modal-actions {
+    flex-direction: column-reverse;
+  }
+
+  .users-page .modal-actions button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .auth-page {
+    padding: 16px;
+  }
+
+  .auth-card {
+    padding: 28px 22px;
+    border-radius: 14px;
+  }
+
+  .auth-card h1 {
+    font-size: 24px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .status-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-header {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .dashboard-header h1 {
+    font-size: 23px;
+  }
+
+  .role-pill {
+    align-self: flex-start;
+  }
+
+  .activity-content span {
+    display: none;
+  }
+
+  .breadcrumb {
+    font-size: 10px;
+  }
+
+  .topbar-right {
+    gap: 7px;
+  }
+
+  .modal-overlay {
+    padding: 12px;
+  }
+
+  .modal,
+  .modal-card {
+    max-height: calc(100vh - 24px);
+    border-radius: 15px;
+  }
+
+  .modal-header {
+    padding: 17px;
+  }
+
+  .modal-body,
+  .modal-form {
+    padding: 17px;
+  }
+
+  .modal-actions {
+    padding: 14px 17px 17px;
+  }
+
+  .add-member-form {
+    grid-template-columns: 1fr;
+  }
+
+  .add-member-button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 520px) {
+  .modal-overlay {
+    align-items: flex-end;
+    padding: 0;
+  }
+
+  .modal,
+  .modal-card {
+    width: 100%;
+    max-width: none;
+    max-height: 92vh;
+    border-radius: 17px 17px 0 0;
+    animation: modalMobileIn 0.22s ease-out;
+  }
+
+  @keyframes modalMobileIn {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .search-form {
+    flex-direction: column;
+  }
+
+  .search-form button {
+    width: 100%;
+  }
+
+  .page-header h1 {
+    font-size: 24px;
+  }
+
+  .table-header {
+    padding: 16px;
+  }
+
+  .pagination {
+    gap: 7px;
+    padding: 12px;
+  }
+
+  .pagination .secondary-button {
+    padding: 9px 10px;
+    font-size: 11px;
+  }
+
+  .pagination-info {
+    min-width: 70px;
+  }
+
+  .modal-title-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .modal-header h2 {
+    font-size: 16px;
+  }
+
+  .modal-header p {
+    font-size: 10px;
+  }
+
+  .member-card {
+    align-items: flex-start;
+  }
+
+  .member-card .status-badge {
+    font-size: 9px;
+  }
+}

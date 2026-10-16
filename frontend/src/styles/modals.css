@@ -1,0 +1,405 @@
+/* =========================================================
+   MODAL OVERLAY
+========================================================= */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(15, 23, 42, 0.68);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  animation: modalOverlayIn 0.18s ease-out;
+  isolation: isolate;
+}
+
+@keyframes modalOverlayIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.modal,
+.modal-card {
+  position: relative;
+  z-index: 10000;
+  width: 100%;
+  max-width: 540px;
+  max-height: calc(100vh - 48px);
+  overflow-y: auto;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+  box-shadow:
+    0 30px 80px rgba(15, 23, 42, 0.24),
+    0 8px 25px rgba(15, 23, 42, 0.12);
+  color: #111827;
+  animation: modalIn 0.2s ease-out;
+}
+
+@keyframes modalIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.members-modal {
+  max-width: 650px;
+}
+
+.modal-small {
+  max-width: 440px;
+}
+
+/* =========================================================
+   MODAL HEADER
+========================================================= */
+
+.modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px 22px;
+  border-bottom: 1px solid var(--border);
+  background: #ffffff;
+}
+
+.modal-title-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  min-width: 0;
+}
+
+.modal-title-icon {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 11px;
+  background: var(--primary-light);
+  color: var(--primary);
+  display: grid;
+  place-items: center;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.modal-header h2 {
+  margin: 1px 0 0;
+  color: var(--text);
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+}
+
+.modal-header p {
+  max-width: 430px;
+  margin: 5px 0 0;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.modal-close {
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  border: none;
+  border-radius: 9px;
+  background: #f3f4f6;
+  color: #6b7280;
+  display: grid;
+  place-items: center;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.modal-close:hover:not(:disabled) {
+  background: #e5e7eb;
+  color: #111827;
+  transform: rotate(3deg);
+}
+
+.modal-close:disabled {
+  opacity: 0.5;
+}
+
+/* =========================================================
+   MODAL BODY / FORM
+========================================================= */
+
+.modal-body,
+.modal-form {
+  padding: 22px;
+  background: #ffffff;
+}
+
+.modal-form .form-group {
+  margin-bottom: 18px;
+}
+
+.modal-form .form-group label {
+  display: block;
+  margin-bottom: 7px;
+  color: #111827;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.modal-form .form-group input,
+.modal-form .form-group select,
+.modal-form .form-group textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #d1d5db;
+  border-radius: 9px;
+  background: #ffffff;
+  color: #111827;
+  font-family: inherit;
+  font-size: 13px;
+  outline: none;
+  opacity: 1;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.modal-form .form-group input,
+.modal-form .form-group select {
+  height: 44px;
+  padding: 0 12px;
+}
+
+.modal-form .form-group textarea {
+  min-height: 105px;
+  padding: 11px 12px;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+.modal-form .form-group input::placeholder,
+.modal-form .form-group textarea::placeholder {
+  color: #9ca3af;
+  opacity: 1;
+}
+
+.modal-form .form-group input:hover,
+.modal-form .form-group select:hover,
+.modal-form .form-group textarea:hover {
+  border-color: #b8bec9;
+}
+
+.modal-form .form-group input:focus,
+.modal-form .form-group select:focus,
+.modal-form .form-group textarea:focus {
+  border-color: var(--primary);
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.modal-form input:disabled,
+.modal-form select:disabled,
+.modal-form textarea:disabled {
+  background: #f3f4f6;
+  color: #6b7280;
+  opacity: 1;
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   CHECKBOX
+========================================================= */
+
+.checkbox-field {
+  min-height: 58px;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 12px 14px;
+  border: 1px solid #dbeafe;
+  border-radius: 10px;
+  background: #f8fbff;
+  cursor: pointer;
+}
+
+.checkbox-field input {
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
+  accent-color: var(--primary);
+  cursor: pointer;
+}
+
+.checkbox-field span {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.checkbox-field strong {
+  color: var(--text);
+  font-size: 11px;
+}
+
+.checkbox-field small {
+  color: var(--muted);
+  font-size: 9px;
+}
+
+/* =========================================================
+   MODAL ACTIONS
+========================================================= */
+
+.modal-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 9px;
+  margin-top: 4px;
+  padding: 16px 22px 20px;
+  border-top: 1px solid var(--border);
+  background: #ffffff;
+}
+
+.modal-actions .primary-button,
+.modal-actions .secondary-button {
+  min-width: 105px;
+}
+
+.button-spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+/* =========================================================
+   CURRENT USER LABEL
+========================================================= */
+
+.current-user-label {
+  display: inline-block;
+  margin-left: 7px;
+  padding: 2px 6px;
+  border-radius: 5px;
+  background: var(--primary-light);
+  color: var(--primary);
+  font-size: 9px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   ROLE WARNING
+========================================================= */
+
+.role-warning {
+  margin-top: 4px;
+  padding: 10px 12px;
+  border: 1px solid #bfdbfe;
+  border-radius: 8px;
+  background: #eff6ff;
+  color: #1e40af;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   DANGER BUTTON
+========================================================= */
+
+.danger-button {
+  padding: 10px 14px;
+  border: none;
+  border-radius: 9px;
+  background: #dc2626;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.danger-button:hover {
+  background: #b91c1c;
+  transform: translateY(-1px);
+}
+
+.danger-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* =========================================================
+   CONFIRMATION MODAL
+========================================================= */
+
+.confirmation-content {
+  padding: 28px;
+  background: #ffffff;
+  text-align: center;
+}
+
+.confirmation-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  background: #fff7ed;
+  color: #ea580c;
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.confirmation-content h2 {
+  margin: 0;
+  color: var(--text);
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.confirmation-content p {
+  max-width: 340px;
+  margin: 10px auto 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.confirmation-content .modal-actions {
+  justify-content: center;
+  margin-top: 24px;
+}

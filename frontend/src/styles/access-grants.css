@@ -1,0 +1,827 @@
+
+/* =========================================================
+   ACCESS GRANTS — RESPONSIVE, USERS-PAGE STYLE
+   ========================================================= */
+
+.access-grants-page {
+  width: 100%;
+  min-width: 0;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.access-grants-page *,
+.access-grants-page *::before,
+.access-grants-page *::after {
+  box-sizing: border-box;
+}
+
+/* HEADER */
+
+.access-grants-page .dashboard-header {
+  width: 100%;
+  min-width: 0;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.access-grants-page .dashboard-header > div {
+  min-width: 0;
+}
+
+.access-grants-page .eyebrow {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--primary);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.access-grants-page .dashboard-header h1 {
+  margin: 0;
+  color: var(--text);
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+
+.access-grants-page .dashboard-subtitle {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* ALERT */
+
+.access-grants-page .alert {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  padding: 10px 12px;
+  border: 1px solid;
+  border-radius: 8px;
+  font-size: 12px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.access-grants-page .alert-error {
+  border-color: #fecaca;
+  background: var(--danger-bg);
+  color: var(--danger);
+}
+
+/* MAIN CARD */
+
+.access-grants-page .access-grants-card {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+/* FILTERS */
+
+.access-grants-page .filters-row {
+  width: 100%;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.access-grants-page .filters-row select {
+  width: 160px;
+  max-width: 100%;
+  height: 38px;
+  padding: 0 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  outline: none;
+  background: var(--surface);
+  color: var(--text);
+  font-size: 12px;
+}
+
+.access-grants-page .filters-row select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-light);
+}
+
+/* TABLE WRAPPER
+   Do not hide horizontal overflow here. */
+
+.access-grants-page .data-table {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-gutter: stable;
+}
+
+/* TABLE */
+
+.access-grants-page .data-table table {
+  width: 100%;
+  min-width: 1120px;
+  border-collapse: collapse;
+  border-spacing: 0;
+  table-layout: fixed;
+}
+
+/* COLUMN WIDTHS
+   Targets the 9-column table without requiring JSX classes. */
+
+.access-grants-page .data-table th:nth-child(1),
+.access-grants-page .data-table td:nth-child(1) {
+  width: 145px;
+}
+
+.access-grants-page .data-table th:nth-child(2),
+.access-grants-page .data-table td:nth-child(2) {
+  width: 145px;
+}
+
+.access-grants-page .data-table th:nth-child(3),
+.access-grants-page .data-table td:nth-child(3) {
+  width: 110px;
+}
+
+.access-grants-page .data-table th:nth-child(4),
+.access-grants-page .data-table td:nth-child(4) {
+  width: 85px;
+}
+
+.access-grants-page .data-table th:nth-child(5),
+.access-grants-page .data-table td:nth-child(5) {
+  width: 105px;
+}
+
+.access-grants-page .data-table th:nth-child(6),
+.access-grants-page .data-table td:nth-child(6) {
+  width: 105px;
+}
+
+.access-grants-page .data-table th:nth-child(7),
+.access-grants-page .data-table td:nth-child(7) {
+  width: 100px;
+}
+
+.access-grants-page .data-table th:nth-child(8),
+.access-grants-page .data-table td:nth-child(8) {
+  width: 130px;
+}
+
+.access-grants-page .data-table th:nth-child(9),
+.access-grants-page .data-table td:nth-child(9) {
+  width: 180px;
+}
+
+/* TABLE HEADER */
+
+.access-grants-page .data-table thead th {
+  height: 42px;
+  padding: 0 12px;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface-soft);
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-align: left;
+  text-transform: uppercase;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.access-grants-page .data-table thead th:last-child {
+  text-align: center;
+}
+
+/* TABLE BODY */
+
+.access-grants-page .data-table tbody td {
+  min-width: 0;
+  padding: 12px;
+  border-bottom: 1px solid var(--border-light);
+  background: var(--surface);
+  color: var(--text-soft);
+  font-size: 11px;
+  line-height: 1.4;
+  vertical-align: middle;
+  overflow-wrap: anywhere;
+}
+
+.access-grants-page .data-table tbody tr:hover td {
+  background: var(--surface-soft);
+}
+
+.access-grants-page .data-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* USER / RESOURCE / PROJECT / GRANTED BY */
+
+.access-grants-page .table-primary {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  color: var(--text);
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.access-grants-page .table-secondary {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* ACCESS BADGES */
+
+.access-grants-page .grant-access-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 48px;
+  min-height: 24px;
+  padding: 0 8px;
+  border-radius: 999px;
+  font-size: 9px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.access-grants-page .grant-access-read {
+  background: var(--primary-light);
+  color: var(--primary);
+}
+
+.access-grants-page .grant-access-write {
+  background: var(--warning-bg);
+  color: var(--warning);
+}
+
+.access-grants-page .grant-access-admin {
+  background: var(--danger-bg);
+  color: var(--danger);
+}
+
+/* STATUS BADGES */
+
+.access-grants-page .grant-status-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 24px;
+  padding: 0 8px;
+  border-radius: 999px;
+  font-size: 9px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.access-grants-page .grant-status-active {
+  background: var(--success-bg);
+  color: var(--success);
+}
+
+.access-grants-page .grant-status-revoked {
+  background: var(--danger-bg);
+  color: var(--danger);
+}
+
+.access-grants-page .grant-status-expired {
+  background: var(--warning-bg);
+  color: var(--warning);
+}
+
+/* ACTIONS COLUMN */
+
+.access-grants-page .data-table th:last-child,
+.access-grants-page .data-table td:last-child {
+  width: 180px;
+  min-width: 180px;
+}
+
+.access-grants-page .data-table td:last-child {
+  padding: 10px 12px;
+  text-align: center;
+}
+
+/* ACTION BUTTONS */
+
+.access-grants-page .table-actions,
+.access-grants-page .actions-container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  margin: 0 auto;
+  white-space: normal;
+}
+
+.access-grants-page .table-actions > *,
+.access-grants-page .actions-container > * {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.access-grants-page .action-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  min-height: 32px;
+  height: auto;
+  padding: 7px 8px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: var(--surface);
+  color: var(--text-soft);
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1.3;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  cursor: pointer;
+  transition: background var(--transition),
+    border-color var(--transition), color var(--transition);
+}
+
+.access-grants-page .action-button:hover {
+  border-color: #bfdbfe;
+  background: var(--primary-light);
+  color: var(--primary);
+}
+
+.access-grants-page .action-button.danger {
+  border-color: #fecaca;
+  background: var(--danger-bg);
+  color: var(--danger);
+}
+
+.access-grants-page .action-button.danger:hover {
+  border-color: #fca5a5;
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.access-grants-page .no-action {
+  display: block;
+  width: 100%;
+  padding: 6px 2px;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 600;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+/* LOADING */
+
+.access-grants-page .loading-state {
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.access-grants-page .loading-spinner {
+  width: 28px;
+  height: 28px;
+  border: 3px solid var(--border);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: accessGrantsSpin 0.8s linear infinite;
+}
+
+@keyframes accessGrantsSpin {
+  to { transform: rotate(360deg); }
+}
+
+/* EMPTY */
+
+.access-grants-page .empty-state {
+  min-height: 220px;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.access-grants-page .empty-state h3 {
+  margin: 0 0 6px;
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.access-grants-page .empty-state p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* PAGINATION */
+
+.access-grants-page .pagination {
+  width: 100%;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 16px;
+  border-top: 1px solid var(--border);
+}
+
+.access-grants-page .pagination-info {
+  min-width: 0;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.5;
+  white-space: normal;
+}
+
+.access-grants-page .pagination-buttons {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-shrink: 0;
+}
+
+.access-grants-page .pagination-buttons button {
+  min-width: 32px;
+  min-height: 32px;
+  padding: 0 10px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: var(--surface);
+  color: var(--text-soft);
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.access-grants-page .pagination-buttons button:hover:not(:disabled) {
+  border-color: #bfdbfe;
+  background: var(--primary-light);
+  color: var(--primary);
+}
+
+.access-grants-page .pagination-buttons button.active {
+  border-color: var(--primary);
+  background: var(--primary);
+  color: #fff;
+}
+
+.access-grants-page .pagination-buttons button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* MODAL */
+
+.access-grants-page .modal-overlay {
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(15, 23, 42, 0.5);
+}
+
+.access-grants-page .access-grant-modal {
+  width: 100%;
+  max-width: 560px;
+  max-height: calc(100dvh - 40px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+  box-shadow: var(--shadow-lg);
+}
+
+.access-grants-page .modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 18px 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.access-grants-page .modal-header > div {
+  min-width: 0;
+}
+
+.access-grants-page .modal-header h2 {
+  margin: 0;
+  color: var(--text);
+  font-size: 17px;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.access-grants-page .modal-header p {
+  margin: 5px 0 0;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.access-grants-page .modal-close {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 18px;
+}
+
+.access-grants-page .modal-close:hover {
+  color: var(--danger);
+  background: var(--danger-bg);
+  border-color: #fecaca;
+}
+
+/* REVIEW INFO */
+
+.access-grants-page .grant-review-info {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  padding: 16px;
+  margin: 20px 20px 0;
+  background: var(--surface-soft);
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+}
+
+.access-grants-page .grant-review-info div {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.access-grants-page .grant-review-info span {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.access-grants-page .grant-review-info strong {
+  color: var(--text);
+  font-size: 12px;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* MODAL FORM */
+
+.access-grants-page .access-grant-modal form {
+  min-width: 0;
+  padding: 20px;
+}
+
+.access-grants-page .form-group {
+  min-width: 0;
+  margin-bottom: 15px;
+}
+
+.access-grants-page .form-group label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--text-soft);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.access-grants-page .form-group textarea {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-height: 100px;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text);
+  font-size: 12px;
+  line-height: 1.5;
+  outline: none;
+  resize: vertical;
+}
+
+.access-grants-page .form-group textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-light);
+}
+
+/* MODAL FOOTER */
+
+.access-grants-page .modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-top: 8px;
+}
+
+.access-grants-page .modal-footer button,
+.access-grants-page .secondary-button,
+.access-grants-page .danger-button {
+  min-height: 36px;
+  max-width: 100%;
+  padding: 0 13px;
+  border-radius: 7px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.access-grants-page .secondary-button {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-soft);
+}
+
+.access-grants-page .danger-button {
+  border: 1px solid var(--danger);
+  background: var(--danger);
+  color: #fff;
+}
+
+/* TABLET */
+
+@media (max-width: 1100px) {
+  .access-grants-page {
+    padding: 20px;
+  }
+
+  .access-grants-page .data-table {
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  .access-grants-page .data-table table {
+    width: 1120px;
+    min-width: 1120px;
+  }
+}
+
+@media (max-width: 900px) {
+  .access-grants-page .grant-review-info {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+  .access-grants-page {
+    padding: 16px;
+  }
+
+  .access-grants-page .dashboard-header {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .access-grants-page .dashboard-header h1 {
+    font-size: 24px;
+  }
+
+  .access-grants-page .filters-row {
+    align-items: stretch;
+    flex-direction: column;
+    padding: 12px;
+  }
+
+  .access-grants-page .filters-row select {
+    width: 100%;
+  }
+
+  .access-grants-page .data-table {
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  .access-grants-page .data-table table {
+    width: 1120px;
+    min-width: 1120px;
+  }
+
+  .access-grants-page .pagination {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .access-grants-page .pagination-buttons {
+    width: 100%;
+  }
+
+  .access-grants-page .pagination-buttons button {
+    flex: 1;
+  }
+
+  .access-grants-page .modal-overlay {
+    align-items: flex-start;
+    justify-content: center;
+    padding: 12px;
+    overflow-y: auto;
+  }
+
+  .access-grants-page .access-grant-modal {
+    max-height: calc(100dvh - 24px);
+  }
+
+  .access-grants-page .grant-review-info {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+    margin: 16px 16px 0;
+  }
+}
+
+/* SMALL MOBILE */
+
+@media (max-width: 420px) {
+  .access-grants-page {
+    padding: 12px;
+  }
+
+  .access-grants-page .dashboard-header h1 {
+    font-size: 22px;
+  }
+
+  .access-grants-page .dashboard-subtitle {
+    font-size: 12px;
+  }
+
+  .access-grants-page .access-grant-modal form,
+  .access-grants-page .modal-header {
+    padding: 16px;
+  }
+
+  .access-grants-page .modal-footer {
+    align-items: stretch;
+    flex-direction: column-reverse;
+  }
+
+  .access-grants-page .modal-footer button {
+    width: 100%;
+  }
+}
