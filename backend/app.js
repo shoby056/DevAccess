@@ -19,7 +19,6 @@ const aiAssistantRoutes = require("./routes/aiAssistantRoutes");
 const app = express();
 
 // Allowed frontend origins
-
 const allowedOrigins = [
   "http://localhost:5173",
   "https://dev-access-l26w.vercel.app",
@@ -29,7 +28,7 @@ const allowedOrigins = [
 // CORS configuration
 const corsOptions = {
   origin: (origin, callback) => {
-    // Allow Vercel preview deployment URLs
+    // Allow frontend production and matching Vercel preview URLs
     const isVercelPreview =
       /^https:\/\/dev-access-l26w-[a-z0-9]+-muhammad-shoaibs-projects-b9c8198d\.vercel\.app$/.test(
         origin || ""
@@ -43,7 +42,8 @@ const corsOptions = {
       return callback(null, true);
     }
 
-    return callback(new Error("Not allowed by CORS"));
+    console.error("CORS blocked origin:", origin);
+    return callback(null, false);
   },
 
   methods: [
