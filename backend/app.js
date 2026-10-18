@@ -19,9 +19,11 @@ const aiAssistantRoutes = require("./routes/aiAssistantRoutes");
 const app = express();
 
 // Allowed frontend origins
+
 const allowedOrigins = [
   "http://localhost:5173",
   "https://dev-access-l26w.vercel.app",
+  "https://dev-access-l26w-10117rhh6-muhammad-shoaibs-projects-b9c8198d.vercel.app",
 ];
 
 // CORS configuration
