@@ -18,13 +18,16 @@ const aiAssistantRoutes = require("./routes/aiAssistantRoutes");
 
 const app = express();
 
+// Allowed frontend origins
 const allowedOrigins = [
   "http://localhost:5173",
   "https://dev-access-l26w.vercel.app",
 ];
 
+// CORS configuration
 const corsOptions = {
   origin: (origin, callback) => {
+    // Allow Vercel preview deployment URLs
     const isVercelPreview =
       /^https:\/\/dev-access-l26w-[a-z0-9]+-muhammad-shoaibs-projects-b9c8198d\.vercel\.app$/.test(
         origin || ""
@@ -40,13 +43,26 @@ const corsOptions = {
 
     return callback(new Error("Not allowed by CORS"));
   },
-  methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"],
+
+  methods: [
+    "GET",
+    "POST",
+    "PUT",
+    "PATCH",
+    "DELETE",
+    "OPTIONS",
+  ],
+
+  allowedHeaders: [
+    "Content-Type",
+    "Authorization",
+  ],
 };
 
 app.use(cors(corsOptions));
 app.use(express.json());
 
+// Health check
 app.get("/api/health", (req, res) => {
   res.status(200).json({
     success: true,
@@ -54,7 +70,10 @@ app.get("/api/health", (req, res) => {
   });
 });
 
+// Authentication routes
 app.use("/api/auth", authRoutes);
+
+// Application routes
 app.use("/api/roles", roleRoutes);
 app.use("/api/permissions", permissionRoutes);
 app.use("/api/users", userRoutes);
@@ -68,6 +87,7 @@ app.use("/api/profile", profileRoutes);
 app.use("/api/notifications", notificationRoutes);
 app.use("/api/ai-assistant", aiAssistantRoutes);
 
+// Root endpoint
 app.get("/", (req, res) => {
   res.status(200).json({
     success: true,
