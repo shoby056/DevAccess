@@ -16,7 +16,9 @@ const AuthContextProvider = ({ children }) => {
     const loadUser = async () => {
       const storedToken = localStorage.getItem("devaccess_token");
 
-      if (!storedToken) {
+      if (!storedToken || storedToken === "undefined") {
+        localStorage.removeItem("devaccess_token");
+        setToken(null);
         setLoading(false);
         return;
       }
@@ -26,11 +28,19 @@ const AuthContextProvider = ({ children }) => {
           `Bearer ${storedToken}`;
 
         const response = await authService.getMe();
+        const currentUser = response?.data?.user;
 
-        setUser(response.user);
+        if (!currentUser) {
+          throw new Error("User data missing from getMe response");
+        }
+
+        setUser(currentUser);
         setToken(storedToken);
       } catch (error) {
-        console.error("Failed to load user:", error);
+        console.error(
+          "Failed to load user:",
+          error.response?.data || error.message
+        );
 
         localStorage.removeItem("devaccess_token");
         delete api.defaults.headers.common.Authorization;
@@ -47,7 +57,11 @@ const AuthContextProvider = ({ children }) => {
 
   const login = async (credentials) => {
     const response = await authService.login(credentials);
-    const newToken = response.token;
+    const newToken = response?.data?.token;
+
+    if (!newToken || newToken === "undefined") {
+      throw new Error("Login response did not contain a valid token");
+    }
 
     localStorage.setItem("devaccess_token", newToken);
 
@@ -56,13 +70,18 @@ const AuthContextProvider = ({ children }) => {
 
     try {
       const meResponse = await authService.getMe();
+      const currentUser = meResponse?.data?.user;
+
+      if (!currentUser) {
+        throw new Error("User data missing from getMe response");
+      }
 
       setToken(newToken);
-      setUser(meResponse.user);
+      setUser(currentUser);
 
       return {
         ...response,
-        user: meResponse.user,
+        user: currentUser,
       };
     } catch (error) {
       localStorage.removeItem("devaccess_token");
@@ -88,11 +107,7 @@ const AuthContextProvider = ({ children }) => {
   };
 
   const hasPermission = (permission) => {
-    if (!user?.permissions) {
-      return false;
-    }
-
-    return user.permissions.includes(permission);
+    return user?.permissions?.includes(permission) ?? false;
   };
 
   const hasRole = (role) => {
