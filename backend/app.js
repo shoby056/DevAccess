@@ -1,6 +1,7 @@
 
 const express = require("express");
 const cors = require("cors");
+const connectDB = require("./config/db");
 
 const roleRoutes = require("./routes/roleRoutes");
 const permissionRoutes = require("./routes/permissionRoutes");
@@ -28,7 +29,6 @@ const allowedOrigins = [
 // CORS configuration
 const corsOptions = {
   origin: (origin, callback) => {
-    // Allow frontend production and matching Vercel preview URLs
     const isVercelPreview =
       /^https:\/\/dev-access-l26w-[a-z0-9]+-muhammad-shoaibs-projects-b9c8198d\.vercel\.app$/.test(
         origin || ""
@@ -43,7 +43,7 @@ const corsOptions = {
     }
 
     console.error("CORS blocked origin:", origin);
-    return callback(null, false);
+    return callback(new Error("Not allowed by CORS"));
   },
 
   methods: [
@@ -64,12 +64,27 @@ const corsOptions = {
 app.use(cors(corsOptions));
 app.use(express.json());
 
-// Health check
+// Health check (does not require MongoDB)
 app.get("/api/health", (req, res) => {
   res.status(200).json({
     success: true,
     message: "DevAccess API is running",
   });
+});
+
+// Connect to MongoDB before application API requests
+app.use(async (req, res, next) => {
+  try {
+    await connectDB();
+    next();
+  } catch (error) {
+    console.error("Database connection unavailable:", error.message);
+
+    return res.status(503).json({
+      success: false,
+      message: "Database connection unavailable",
+    });
+  }
 });
 
 // Authentication routes

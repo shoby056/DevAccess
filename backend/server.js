@@ -6,7 +6,6 @@ require("dotenv").config({
 });
 
 const app = require("./app");
-const connectDB = require("./config/db");
 
 const PORT = process.env.PORT || 5000;
 
@@ -15,8 +14,11 @@ console.log(
   Boolean(process.env.GEMINI_API_KEY)
 );
 
-connectDB();
+// Local development server
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`DevAccess server running on port ${PORT}`);
+  });
+}
 
-app.listen(PORT, () => {
-  console.log(`DevAccess server running on port ${PORT}`);
-});
+module.exports = app;

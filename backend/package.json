@@ -1,10 +1,11 @@
+
 {
   "name": "backend",
   "version": "1.0.0",
   "description": "Backend for DevAccess Developer Workspace and Access Management Platform",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "node server.js",
     "dev": "nodemon server.js",
     "seed": "node seed/seedDatabase.js",
     "migrate-users": "node seed/migrateUsers.js",
